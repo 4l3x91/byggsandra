@@ -1,78 +1,106 @@
-import { RiFacebookFill } from "react-icons/ri";
-import { RxInstagramLogo, RxLinkedinLogo } from "react-icons/rx";
 import PricingCard from "../components/PricingCard";
 import { plans } from "../data/plans";
-
+import socials from "../data/socials";
 
 const Home = () => {
-  const Socials = [
-    { title: "Instagram", path: "https://www.instagram.com/byggsandra/", icon: <RxInstagramLogo size="32" /> },
-    { title: "Facebook", path: "https://www.facebook.com/byggsandra", icon: <RiFacebookFill size="32" /> },
-    { title: "LinkedIn", path: "https://se.linkedin.com/in/sandra-byggsandra-mobaraki-30059480", icon: <RxLinkedinLogo size="32" /> },
-  ];
   return (
     <>
-      <section
-        className="px-4 sm:pt-24 pb-48 overflow-hidden relative bg-gradient-to-b from-purple-700 to-purple-400"
-      >
-        <div style={{
-position: "absolute",
-bottom: "-5rem",
-height: "30rem",
-left: 0,
-right: 0,
-backgroundImage: `url('./src/assets/bottomshape01.png')`,
-backgroundRepeat: "no-repeat",
-backgroundPosition: "bottom",
-backgroundSize: "cover",
-zIndex: 1,
-        }} />
-        <div className="max-w-screen-2xl mx-auto relative">
-          <div className="flex flex-row flex-wrap md:justify-between w-full items-center">
-            <div className="text-white relative" style={{zIndex: 9999}}>
-              <div className="md:border-l-4 md:border-b-4 md:pl-2 md:pb-2 border-white rounded-bl-xl">
-                <h6 className="text-3xl flip-animation">Byggnadsinspiratör</h6>
-                <h1 className="tracking-tighter text-6xl sm:text-8xl md:text-9xl uppercase mb-[-.25rem] md:mb-[-.75rem]">
-                  Sandra
-                  <br />
-                  Moboraki
-                </h1>
-              </div>
-              <div className="flex flex-col-reverse sm:flex-row  mt-2">
-                <div className="flex gap-1">
-                {Socials.map((link, index) => (
-                  <a
-                  key={index}
-                  href={link.path}
-                  target="_blank"
-                  className="hover:text-purple-200"
-                  >
-                    {link.icon}
-                  </a>
-                ))}
-                </div>
-              <div className="sm:ml-auto">Sveriges första bygginspiratör</div>
-              </div>
-              </div>
+      <section className="px-4 md:px-16 sm:pt-[4rem] pb-48 overflow-hidden relative bg-gradient-to-b from-purple-700 to-purple-400">
+        <div
+          style={{
+            position: "absolute",
+            bottom: "-5rem",
+            height: "30rem",
+            left: 0,
+            right: 0,
+            backgroundImage: `url('./src/assets/bottomshape01.png')`,
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "bottom",
+            backgroundSize: "cover",
+            zIndex: 1,
+          }}
+        />
+        <div className="max-w-screen-2xl mx-auto flex relative">
+          <div className="flex gap-2 text-white md:flex-col absolute bottom-0 md:top-0 md:right-0 z-50">
+            {socials.map((link, index) => (
+              <a
+                key={index}
+                href={link.path}
+                target="_blank"
+                className="hover:text-purple-200"
+              >
+                {<link.icon size={38} />}
+              </a>
+            ))}
+          </div>
+          <div className="md:basis-1/4">
+            <div className="text-white relative w-fit z-50">
+              <h4 className="text-6xl">Hej!</h4>
+              <h6 className="text-xl md:text-3xl">
+                Jag är Sveriges första bygginspiratör,
+              </h6>
+              <h1 className="tracking-tighter text-6xl sm:text-8xl md:text-9xl uppercase ml-[-.5rem] leading-none">
+                Sandra{"\n"}Moboraki
+              </h1>
+            </div>
+            <div className="text-2xl text-white mt-4 relative z-50 leading-snug ">
+              <h6>
+                Möt Byggsandra - Sveriges första bygginspiratör som driver
+                jämställdhet och nyskapande inom branschen via konsulttjänster
+                och inspirerande föreläsningar.{"\n"}Välkommen till en värld av
+                innovativ bygginspiration.
+              </h6>
+            </div>
+            <div className="text-right mt-8 relative z-50">
+              <button
+                type="button"
+                className=" bg-white hover:bg-gray-600 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center"
+              >
+                Läs mer om mig
+                <svg
+                  className="w-3.5 h-3.5 ml-2"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 14 10"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M1 5h12m0 0L9 1m4 4L9 9"
+                  />
+                </svg>
+              </button>
             </div>
           </div>
+        </div>
         <img
-          className="w-[800px] h-auto block absolute bottom-[-.5rem] lg:bottom-5 right-[-8rem] sm:right-[-15rem] lg:right-0"
+          className="
+          w-[30rem]
+          lg:w-[65rem] h-auto block absolute
+          bottom-[-.5rem]
+          lg:bottom-5
+          right-[-5rem]
+          md:right-[-10rem]
+          lg:right-[-15rem]
+          xl:right-[-5rem]
+          "
           src="./src/assets/byggsandra.png"
           alt="Bonnie Avatar"
         ></img>
       </section>
       <section className="px-4 py-12 overflow-hidden">
         <div className="max-w-screen-2xl mx-auto">
-          <div className="flex lg:px-32">
-            <div className="border-l-4 border-t-4 pl-2 pt-2 border-black basis-1/5 rounded-tl-xl">
-              <h2 className="tracking-tighter text-5xl sm:text-6xl md:text-7xl uppercase">
-                Tjänster
-              </h2>
-            </div>
-          </div>
-          <div className="flex mb-8 lg:px-32">
-            <h6 className="text-2xl md:basis-1/2 xl:basis-1/4">Nedan finner du de tjänster jag erbjuder. Jag har även möjlighet att skräddarsy tjänster efter dina behov.</h6>
+          <div className="lg:px-32">
+            <h2 className="tracking-tight lg:ml-[-1rem] font-semibold text-4xl sm:text-6xl md:text-7xl uppercase">
+              Tjänster
+            </h2>
+            <h6 className="mt-4 mb-12 text-xl md:text-2xl whitespace-pre-line">
+              Nedan finner du de tjänster jag erbjuder. {"\n"}
+              Jag har även möjlighet att skräddarsy tjänster efter dina behov.
+            </h6>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 lg:px-32">
@@ -82,7 +110,7 @@ zIndex: 1,
           </div>
         </div>
       </section>
-      <section
+      {/* <section
         className="px-4 pt-32 pb-48 overflow-hidden relative bg-gradient-to-b from-purple-700 to-purple-400"
         style={{
           clipPath: "polygon(0 15%, 100% 0, 100% 100%, 0 100%)",
@@ -108,7 +136,7 @@ zIndex: 1,
           src="./src/assets/byggsandra.png"
           alt="Bonnie Avatar"
         ></img>
-      </section>
+      </section> */}
     </>
   );
 };

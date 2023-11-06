@@ -3,7 +3,7 @@ import NavLinks from "./NavLinks";
 
 const Navigation = () => {
   return (
-    <header className="w-full flex lg:w-auto bg-purple-700 justify-content-center justify-center p-4 md:px-4 md:py-0">
+    <header className="w-full flex lg:w-auto bg-purple-700 justify-content-center justify-center px-4 md:px-16 py-4 md:py-6">
       <nav className="flex font-medium lg:flex-row lg:mt-0 items-center w-full max-w-screen-2xl justify-center">
         <div className="mr-auto">IMG</div>
         <NavLinks />

@@ -7,7 +7,7 @@ interface Props {
 const PricingCard = ({ plan }: Props) => {
   return (
     <div
-      className="border-2 border-black rounded-md flex flex-col w-full cursor-default p-4 md:p-6 xl:p-8 text-left md:text-center
+      className="border border-purple-400 rounded-md flex flex-col w-full cursor-default p-4 md:p-6 xl:p-8 text-left md:text-center
       bg-white hover:border-purple-600"
     >
       <div className="flex flex-col justify-between h-full">
