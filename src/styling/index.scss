@@ -23,3 +23,31 @@ body {
   color: #fff;
   border-color: #fff;
 }
+
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-250px * 8))
+  }
+}
+
+.slider {
+  margin: auto;
+  overflow: hidden;
+  width: 100%;
+  
+  .slide-track {
+    width: calc(250px * 16);
+    animation: scroll 40s linear infinite;
+    display: flex;
+  }
+
+  .slide {
+    height: 100px;
+    width: 250px;
+  }
+}
