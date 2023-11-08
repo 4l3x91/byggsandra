@@ -24,6 +24,10 @@ body {
   border-color: #fff;
 }
 
+:root {
+  --bWidth: 250px;
+  --bHeight: 150px;
+}
 
 @keyframes scroll {
   0% {
@@ -31,23 +35,27 @@ body {
   }
 
   100% {
-    transform: translateX(calc(-250px * 8))
+    transform: translateX(calc(var(--bWidth) * -8))
   }
 }
-
 .slider {
   margin: auto;
   overflow: hidden;
   width: 100%;
   
   .slide-track {
-    width: calc(250px * 16);
-    animation: scroll 40s linear infinite;
+    width: calc(var(--bWidth) * 16);
+    animation: scroll 35s linear infinite;
     display: flex;
   }
 
   .slide {
-    height: 100px;
-    width: 250px;
+    height: var(--bHeight);
+    width: var(--bWidth);
+  }
+  
+  @media screen and (max-width: 768px) {
+    --bWidth: 150px;
+    --bHeight: 100px;
   }
 }

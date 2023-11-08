@@ -9,21 +9,21 @@ const images = [
   "https://byggsandra.se/wp-content/uploads/2020/10/nordbygg-kopia2.png",
 ];
 
-const SliderComponent = () => {
+const Partnerships = () => {
   const duplicatedImages = [...images, ...images];
   return (
-    <div className="slider bg-gradient-to-b from-purple-800 to-purple-700">
+    <div className="slider absolute left-0 right-0">
       <div className="slide-track">
         {duplicatedImages.map((image) => (
           <div
             className="slide bg-contain bg-no-repeat bg-center"
             key={image}
             style={{ backgroundImage: `url(${image})` }}
-          ></div>
+          />
         ))}
       </div>
     </div>
   );
 };
 
-export default SliderComponent;
+export default Partnerships;
