@@ -12,6 +12,8 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+  --bWidth: 250px;
+  --bHeight: 150px;
 }
 
 body {
@@ -19,14 +21,13 @@ body {
   min-height: 100vh;
 }
 
+#root {
+  overflow-x: hidden;
+}
+
 .active {
   color: #fff;
   border-color: #fff;
-}
-
-:root {
-  --bWidth: 250px;
-  --bHeight: 150px;
 }
 
 @keyframes scroll {
