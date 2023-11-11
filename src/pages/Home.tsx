@@ -1,12 +1,21 @@
+import { useEffect, useState } from "react";
+import { HiOutlineChevronDown } from "react-icons/hi";
 import Partnerships from "../components/Partnerships";
 import PricingCard from "../components/PricingCard";
 import { plans } from "../data/plans";
 import socials from "../data/socials";
-
 const Home = () => {
+  const [showArrow, setShowArrow] = useState(false);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setShowArrow(true);
+    }, 5000);
+    return () => clearTimeout(timeout);
+  }, []);
   return (
     <>
-      <section className="px-4 md:px-16 sm:pt-[4rem] pb-48 overflow-hidden relative bg-gradient-to-b from-purple-700 to-purple-400">
+      <section className="px-4 md:px-16 sm:pt-[4rem] pb-48 relative bg-gradient-to-b from-purple-700 to-purple-400">
         <div
           style={{
             position: "absolute",
@@ -24,7 +33,12 @@ const Home = () => {
         <div className="max-w-screen-2xl mx-auto flex relative">
           <div className="flex gap-2 text-white md:flex-col absolute md:bottom-0 bottom-[-4rem] md:top-0 md:right-0 z-50">
             {socials.map((link, index) => (
-              <a key={index} href={link.path} target="_blank" className="hover:text-purple-200">
+              <a
+                key={index}
+                href={link.path}
+                target="_blank"
+                className="hover:text-purple-200"
+              >
                 {<link.icon size={38} />}
               </a>
             ))}
@@ -32,15 +46,18 @@ const Home = () => {
           <div className="md:basis-1/4">
             <div className="text-white relative w-fit z-50">
               <h4 className="text-3xl sm:text-4xl md:text-6xl">Hej!</h4>
-              <h6 className="text-lg sm:text-xl md:text-3xl">Jag är Sveriges första bygginspiratör,</h6>
+              <h6 className="text-lg sm:text-xl md:text-3xl">
+                Jag är Sveriges första bygginspiratör,
+              </h6>
               <h1 className="tracking-tighter text-5xl sm:text-6xl md:text-8xl lg:text-9xl uppercase md:ml-[-.5rem] leading-none whitespace-pre-line">
                 Sandra{"\n"}Moboraki
               </h1>
             </div>
             <div className="hidden md:block md:mt-4 relative z-50 flex">
               <h6 className="text-md md:text-2xl text-white leading-snug whitespace-pre-line w-full sm:w-3/6 md:w-full ">
-                Möt Byggsandra - Sveriges första bygginspiratör som driver jämställdhet och
-                nyskapande inom branschen via konsulttjänster och inspirerande föreläsningar.{"\n"}
+                Möt Byggsandra - Sveriges första bygginspiratör som driver
+                jämställdhet och nyskapande inom branschen via konsulttjänster
+                och inspirerande föreläsningar.{"\n"}
                 Välkommen till en värld av innovativ bygginspiration.
               </h6>
             </div>
@@ -85,8 +102,12 @@ const Home = () => {
           src="./src/assets/byggsandra.png"
           alt="Bonnie Avatar"
         ></img>
+        
+        <div className={`hidden lg:flex absolute ease-in-out bottom-3 z-50 left-0 right-0 justify-center transition-opacity duration-1000 ${showArrow ? 'opacity-100' : 'opacity-0'}`}>
+          <HiOutlineChevronDown className={`${showArrow ? 'animate-bounce' : ''}`} size={52} />
+        </div>
       </section>
-      <section className="px-4 py-12 overflow-hidden">
+      <section className="px-4 py-12 z-50 relative">
         <div className="max-w-screen-2xl mx-auto">
           <div className="lg:px-32">
             <h2 className="tracking-tight lg:ml-[-1rem] font-semibold text-4xl sm:text-6xl md:text-7xl">
@@ -105,15 +126,17 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className="px-4 py-12 overflow-hidden bg-gradient-to-b from-purple-800 to-purple-700">
+      <section className="px-4 py-12 overflow-hidden">
         <div className="max-w-screen-2xl mx-auto">
-          <div className="lg:px-32 text-white">
+          <div className="lg:px-32">
             <h2 className="tracking-tight font-semibold text-4xl sm:text-6xl md:text-7xl">
               Samarbeten
             </h2>
             <h6 className="mt-4 mb-6 md:mb-12 text-xl md:text-2xl whitespace-pre-line">
-              Jag har haft förmånen att jobba med många fantastiska företag.{"\n"}
-              Här är bara ett axplock av de fantastiska företag jag samarbetat med genom åren!
+              Jag har haft förmånen att jobba med många fantastiska företag.
+              {"\n"}
+              Här är bara ett axplock av de fantastiska företag jag samarbetat
+              med genom åren!
             </h6>
             <div className="h-[100px] md:h-[150px]">
               <Partnerships />
