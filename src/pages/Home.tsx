@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { CgArrowLongRight } from "react-icons/cg";
 import { HiOutlineChevronDown } from "react-icons/hi";
 import Partnerships from "../components/Partnerships";
 import PricingCard from "../components/PricingCard";
@@ -6,6 +7,18 @@ import { plans } from "../data/plans";
 import socials from "../data/socials";
 const Home = () => {
   const [showArrow, setShowArrow] = useState(false);
+
+  const aboutRef = useRef<HTMLDivElement>(null);
+  const servicesRef = useRef<HTMLDivElement>(null);
+
+  function scrollToNextSection(scrollRef: React.RefObject<HTMLDivElement>) {
+    if (scrollRef.current) {
+      scrollRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start", // You can adjust this based on your requirements
+      });
+    }
+  }
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -53,7 +66,7 @@ const Home = () => {
                 Sandra{"\n"}Moboraki
               </h1>
             </div>
-            <div className="hidden md:block md:mt-4 relative z-50 flex">
+            <div className="hidden md:block md:mt-4 relative z-50">
               <h6 className="text-md md:text-2xl text-white leading-snug whitespace-pre-line w-full sm:w-3/6 md:w-full ">
                 Möt Byggsandra - Sveriges första bygginspiratör som driver
                 jämställdhet och nyskapande inom branschen via konsulttjänster
@@ -64,24 +77,10 @@ const Home = () => {
             <div className="lg:text-right mt-4 md:mt-8 relative z-50">
               <button
                 type="button"
-                className=" bg-white hover:bg-gray-600 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center"
+                onClick={() => scrollToNextSection(servicesRef)}
+                className=" bg-white hover:bg-black hover:text-white font-medium rounded-lg text-xs md:text-sm px-5 py-2.5 text-center inline-flex items-center"
               >
-                Läs mer om mig
-                <svg
-                  className="w-3.5 h-3.5 ml-2"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 14 10"
-                >
-                  <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M1 5h12m0 0L9 1m4 4L9 9"
-                  />
-                </svg>
+                Läs mer om mitt arbete
               </button>
             </div>
           </div>
@@ -102,20 +101,119 @@ const Home = () => {
           src="./src/assets/byggsandra.png"
           alt="Bonnie Avatar"
         ></img>
-        
-        <div className={`hidden lg:flex absolute ease-in-out bottom-3 z-50 left-0 right-0 justify-center transition-opacity duration-1000 ${showArrow ? 'opacity-100' : 'opacity-0'}`}>
-          <HiOutlineChevronDown className={`${showArrow ? 'animate-bounce' : ''}`} size={52} />
+        <div
+          onClick={() => scrollToNextSection(aboutRef)}
+          className={`hidden lg:flex absolute ease-in-out bottom-3 z-50 left-0 right-0 justify-center transition-opacity duration-1000 ${
+            showArrow ? "opacity-100 hover:cursor-pointer" : "opacity-0"
+          }`}
+        >
+          <HiOutlineChevronDown
+            className={`${showArrow ? "animate-bounce" : ""}`}
+            size={52}
+          />
         </div>
       </section>
-      <section className="px-4 py-12 z-50 relative">
+      <section className="px-4 py-12 z-50 relative" ref={aboutRef}>
+        <div className="max-w-screen-2xl mx-auto py-8 lg:py-14">
+          <div className="lg:px-32 space-y-12">
+            <div className="mx-auto gap-16 xl:gap-[4rem] lg:grid lg:grid-cols-2">
+              <div className="font-light order-2">
+                <div className="space-y-6 divide-y">
+                  <h2 className="text-4xl tracking-tight font-bold">
+                    Sveriges första bygginspiratör – förändringens pionjär!
+                  </h2>
+                  <p className="md:text-2xl whitespace-pre-line pt-6">
+                    Med en brinnande passion för förändring och en helt egen syn
+                    på byggbranschen, stoltserar jag som Sveriges första
+                    bygginspiratör. Jag skapade rollen själv eftersom den enkelt
+                    uttryckt inte fanns, och mitt arbete är hängivet åt att
+                    använda inspiration som ett kraftfullt verktyg för att driva
+                    innovation och främja utvecklingen inom branschen.{"\n\n"}
+                    Min vision sträcker sig bortom de konventionella gränserna,
+                    och jag tror på att forma framtidens byggprojekt genom att
+                    injicera dem med en dos av kreativitet och nytänkande.
+                  </p>
+                </div>
+              </div>
+              <img
+                className="rounded-md"
+                draggable="false"
+                src="../../src/assets/byggsandra001.bmp"
+                alt="Enkelt, snabbt och effektivt"
+              />
+            </div>
+            <div className="mx-auto gap-16 xl:gap-[4rem] lg:grid lg:grid-cols-2">
+              <div className="font-light order-0">
+                <div className="space-y-6 divide-y">
+                  <h2 className="text-4xl tracking-tight font-bold">
+                    Byggbranschens kvinnor
+                  </h2>
+                  <p className="md:text-2xl whitespace-pre-line pt-6">
+                    Byggbranschenskvinnor grundades med en vision
+                    att forma världens bästa byggsektor, där alla är välkomna.
+                    Vårt uppdrag är att säkerställa att kvinnor kan förverkliga
+                    sina drömmar och visioner. Vi främjar modet att utbilda sig
+                    inom sina yrken och strävar efter att eliminera hinder för
+                    varje individ.
+                  </p>
+                  <button
+                type="button"
+                onClick={() => scrollToNextSection(servicesRef)}
+                className="hidden ml-auto bg-black text-white hover:bg-purple-400 hover:text-black font-medium rounded-lg text-xs md:text-sm px-5 py-2.5 text-center md:flex w-full md:w-auto justify-center items-center"
+              >
+                Läs mer <CgArrowLongRight size={24} className="ml-2" />
+              </button>
+                </div>
+              </div>
+              <img
+                className="rounded-md mt-4 lg:mt-0"
+                width={"100%"}
+                draggable="false"
+                src="../../src/assets/byggsandra011.jpeg"
+                alt="Enkelt, snabbt och effektivt"
+              />
+                                <button
+                type="button"
+                onClick={() => scrollToNextSection(servicesRef)}
+                className="md:hidden ml-auto bg-black text-white hover:bg-purple-400 hover:text-black font-medium rounded-lg text-xs md:text-sm px-5 py-2.5 text-center flex w-full md:w-auto justify-center items-center mt-4"
+              >
+                Läs mer <CgArrowLongRight size={24} className="ml-2" />
+              </button>
+            </div>
+            <div className="mx-auto gap-16 xl:gap-[4rem] lg:grid lg:grid-cols-2">
+              <div className="font-light order-2">
+                <div className="space-y-6 divide-y">
+                  <h2 className="mb-4 text-4xl tracking-tight font-bold">
+                    ByggSandra i media
+                  </h2>
+                  <p className="mb-4 md:text-2xl whitespace-pre-line pt-6">
+                    Jag har haft förmånen att få synas i flera olika medier och
+                    kanaler.{"\n"}Där har jag fått möjlighet att dela med mig av
+                    mina tankar och idéer om byggbranschen, och hur vi kan göra
+                    den mer jämställd och innovativ.
+                  </p>
+                </div>
+              </div>
+              <img
+                className="rounded-md"
+                draggable="false"
+                src="../../src/assets/byggsandra004.bmp"
+                alt="Enkelt, snabbt och effektivt"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="px-4 py-12 z-50 relative" ref={servicesRef}>
         <div className="max-w-screen-2xl mx-auto">
           <div className="lg:px-32">
             <h2 className="tracking-tight lg:ml-[-1rem] font-semibold text-4xl sm:text-6xl md:text-7xl">
               Tjänster
             </h2>
             <h6 className="mt-4 mb-12 text-xl md:text-2xl whitespace-pre-line">
-              Nedan finner du de tjänster jag erbjuder. {"\n"}
-              Jag har även möjlighet att skräddarsy tjänster efter dina behov.
+              Nedan finner du de tjänster jag erbjuder.{"\n"}Jag har även
+              möjlighet att skräddarsy tjänster efter dina behov.
             </h6>
           </div>
 
@@ -126,6 +224,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+
       <section className="px-4 py-12 overflow-hidden">
         <div className="max-w-screen-2xl mx-auto">
           <div className="lg:px-32">
@@ -144,33 +243,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-      {/* <section
-        className="px-4 pt-32 pb-48 overflow-hidden relative bg-gradient-to-b from-purple-700 to-purple-400"
-        style={{
-          clipPath: "polygon(0 15%, 100% 0, 100% 100%, 0 100%)",
-        }}
-      >
-        <div className="max-w-screen-2xl mx-auto relative">
-          <div className="flex flex-row flex-wrap md:justify-between w-full items-center">
-            <div className="text-white">
-              <div className="border-l-4 border-b-4 pl-2 pb-2">
-                <h6 className="text-3xl">Byggnadsinspiratör</h6>
-                <h1 className="tracking-tighter text-6xl sm:text-8xl md:text-9xl uppercase">
-                  Sandra
-                  <br />
-                  Moboraki
-                </h1>
-              </div>
-              <div className="text-right">Sveriges första bygginspiratör</div>
-            </div>
-          </div>
-        </div>
-        <img
-          className="ml-auto mt-8 lg:mt-0 w-[800px] h-auto block absolute bottom-3 right-0"
-          src="./src/assets/byggsandra.png"
-          alt="Bonnie Avatar"
-        ></img>
-      </section> */}
     </>
   );
 };
