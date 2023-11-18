@@ -14,7 +14,7 @@ export const services: Service[] = [
   {
     icon: DiCodepen,
     name: "Projektledare",
-    image: "public/byggsandra003.bmp",
+    image: "byggsandra003.bmp",
     shortDescription:
       "Söker du en projektledare? Jag är en erfaren projektledare som kan hjälpa dig med ditt projekt. ",
     description:
@@ -24,7 +24,7 @@ export const services: Service[] = [
   {
     icon: FaUserLock,
     name: "Rådgivare",
-    image: "public/byggsandra010.jpeg",
+    image: "byggsandra010.jpeg",
     shortDescription:
       "Behöver du rådgivning? Jag är en erfaren rådgivare som kan hjälpa dig med dina frågor.",
     description:
@@ -34,7 +34,7 @@ export const services: Service[] = [
   {
     icon: DiCodepen,
     name: "Talare",
-    image: "public/byggsandra011.jpeg",
+    image: "byggsandra011.jpeg",
     shortDescription:
       "Söker du en talare? Jag är en erfaren talare som kan hjälpa dig med ditt event.",
     description:
