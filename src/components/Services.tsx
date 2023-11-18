@@ -46,8 +46,8 @@ const Services = ({ serviceRef }: Props) => {
             inset: 0,
             backgroundImage: `linear-gradient(
             to bottom,
-            rgba(0, 0, 0, 0.25),
-            rgba(0, 0, 0, 0.35)
+            rgba(0, 0, 0, 0.45),
+            rgba(0, 0, 0, 0.55)
           ),url('${currentService.image}')`,
             filter: "opacity(.8)",
           }}
