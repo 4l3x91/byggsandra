@@ -28,8 +28,9 @@ const HomePage = () => {
   return (
     <>
       <section className="px-4 md:px-16 sm:pt-[4rem] pb-48 relative bg-gradient-to-b from-purple-700 to-purple-400 min-h-[70dvh]">
-        <div className="shape-bottom" />
+        <div style={{backgroundImage: "url(bottomshape01.png)"}} className="shape-bottom" />
         <div
+          style={{ backgroundImage: "url(byggsandra02.png)" }}
           className="header-bg bottom-[-4rem] sm:bottom-[-1rem] lg:bottom-[-2rem]
           right-[-7.5rem] sm:right-[-2.5rem] md:right-[-5rem] xl:right-10
           h-[30rem] w-[30rem]
