@@ -82,3 +82,21 @@ body {
     -webkit-transform: rotate(-45deg);
   }
 }
+
+.snap-proximity::-webkit-scrollbar {
+  display: none;
+}
+
+.snap-proximity {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  will-change: transform;
+  user-select: none;
+  cursor: pointer;
+}
+
+.grabbing {
+  transform: translateY(-5px);
+  transform: scale(1.01);
+  cursor: grabbing;
+}

@@ -53,7 +53,7 @@ const Services = ({ serviceRef }: Props) => {
           }}
         />
       ) : (
-        <>asd</>
+        <></>
       )}
       <div
         style={{
@@ -81,9 +81,7 @@ const Services = ({ serviceRef }: Props) => {
             tjänster efter dina behov.
           </h6>
         </div>
-        <div className="px-0 sm:px-12 md:px-0">
-          <RenderServices />
-        </div>
+        <RenderServices />
       </div>
     </section>
   );
