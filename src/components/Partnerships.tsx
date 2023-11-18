@@ -1,59 +1,38 @@
+import { partners } from "../data/partners";
+
 const Partnerships = () => {
-  const partners = [
-    {
-      name: "Åkesundsvägen",
-      image: "https://byggsandra.se/wp-content/uploads/2020/10/akesundsvll2.png",
-      shouldBeInverted: true,
-    },
-    {
-      name: "Cramo",
-      image: "https://byggsandra.se/wp-content/uploads/2020/10/cramo-logo-svarat.png",
-      shouldBeInverted: false,
-    },
-    {
-      name: "Bygglet",
-      image: "https://byggsandra.se/wp-content/uploads/2020/10/bygglet3.png",
-      shouldBeInverted: true,
-    },
-    {
-      name: "Åkesundsvägen",
-      image: "https://byggsandra.se/wp-content/uploads/2020/10/akesundsvll-kopia3.png",
-      shouldBeInverted: true,
-    },
-    {
-      name: "Byggmaterialhandlarna",
-      image: "https://byggsandra.se/wp-content/uploads/2020/10/byggmaterialhandlarna3.png",
-      shouldBeInverted: true,
-    },
-    {
-      name: "Boinst",
-      image: "https://byggsandra.se/wp-content/uploads/2020/10/boinstat.png",
-      shouldBeInverted: true,
-    },
-    {
-      name: "SSH Bygg",
-      image: "https://byggsandra.se/wp-content/uploads/2020/10/sshbygg4.png",
-      shouldBeInverted: true,
-    },
-    {
-      name: "Nordbygg",
-      image: "https://byggsandra.se/wp-content/uploads/2020/10/nordbygg-kopia2.png",
-      shouldBeInverted: true,
-    },
-  ];
   const duplicatedPartners = [...partners, ...partners];
   return (
-    <div className="slider absolute left-0 right-0">
-      <div className="slide-track">
-        {duplicatedPartners.map((partner) => (
-          <div
-            className="slide bg-contain bg-no-repeat bg-center"
-            key={partner.name}
-            style={{ backgroundImage: `url(${partner.image})`, filter: partner.shouldBeInverted ? "invert(1)" : "invert(0)" }}
-          />
-        ))}
+    <section className="px-4 py-12 relative z-20 overflow-hidden">
+      <div className="max-w-screen-2xl mx-auto">
+        <div>
+          <h2 className="tracking-tight font-semibold text-4xl sm:text-6xl md:text-7xl">
+            Samarbeten
+          </h2>
+          <h6 className="mt-4 mb-6 md:mb-12 text-xl md:text-2xl whitespace-pre-line">
+            Jag har haft förmånen att jobba med många fantastiska företag.
+            {"\n"}
+            Här är bara ett axplock av de fantastiska företag jag samarbetat med genom åren!
+          </h6>
+          <div className="h-[100px] md:h-[150px]">
+            <div className="slider absolute left-0 right-0">
+              <div className="slide-track">
+                {duplicatedPartners.map((partner) => (
+                  <div
+                    className="slide bg-contain bg-no-repeat bg-center"
+                    key={partner.name}
+                    style={{
+                      backgroundImage: `url(${partner.image})`,
+                      filter: partner.shouldBeInverted ? "invert(1)" : "invert(0)",
+                    }}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
