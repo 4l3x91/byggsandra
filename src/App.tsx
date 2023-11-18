@@ -51,11 +51,3 @@ const App = () => {
 }
 
 export default App
-
-
-// Nav
-// Hero
-// Tjänster
-// Om
-// Samarbetspartners
-// Footer

@@ -60,3 +60,25 @@ body {
     --bHeight: 100px;
   }
 }
+
+.active-service {
+  div {
+    transition: .5s ease all;
+  }
+
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    height: 8px;
+    width: 8px;
+    content: '';
+    margin-left: -2rem;
+    border: solid #fff;
+    border-width: 0 1px 1px 0;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
+}
