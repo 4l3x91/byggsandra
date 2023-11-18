@@ -30,7 +30,7 @@ const About = ({ aboutRef }: Props) => {
             <img
               className="rounded-md"
               draggable="false"
-              src="../../src/assets/byggsandra001.bmp"
+              src="public/byggsandra001.bmp"
               alt="Enkelt, snabbt och effektivt"
             />
           </div>
@@ -56,7 +56,7 @@ const About = ({ aboutRef }: Props) => {
               className="rounded-md mt-4 lg:mt-0"
               width={"100%"}
               draggable="false"
-              src="../../src/assets/byggsandra011.jpeg"
+              src="public/byggsandra011.jpeg"
               alt="Enkelt, snabbt och effektivt"
             />
             <button
@@ -80,7 +80,7 @@ const About = ({ aboutRef }: Props) => {
             <img
               className="rounded-md"
               draggable="false"
-              src="../../src/assets/byggsandra004.bmp"
+              src="public/byggsandra004.bmp"
               alt="Enkelt, snabbt och effektivt"
             />
           </div>

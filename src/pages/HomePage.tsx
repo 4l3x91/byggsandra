@@ -35,7 +35,7 @@ const HomePage = () => {
             height: "30rem",
             left: "-5px",
             right: "-5px",
-            backgroundImage: `url('./src/assets/bottomshape01.png')`,
+            backgroundImage: `url('public/bottomshape01.png')`,
             backgroundRepeat: "no-repeat",
             backgroundPosition: "bottom",
             backgroundSize: "cover",
@@ -91,7 +91,7 @@ const HomePage = () => {
           lg:right-[-15rem]
           xl:right-[-5rem]
           "
-          src="./src/assets/byggsandra.png"
+          src="public/byggsandra.png"
           alt="Bonnie Avatar"
         ></img>
         <div

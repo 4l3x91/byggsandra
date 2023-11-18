@@ -64,7 +64,7 @@ const Services = ({ serviceRef }: Props) => {
           height: "30rem",
           left: "-5px",
           right: "-5px",
-          backgroundImage: `url('./src/assets/bottomshape01.png')`,
+          backgroundImage: `url('public/bottomshape01.png')`,
           backgroundRepeat: "no-repeat",
           backgroundPosition: "bottom",
           backgroundSize: "cover",
