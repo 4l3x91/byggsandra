@@ -14,7 +14,7 @@ const HomePage = () => {
     if (scrollRef.current) {
       scrollRef.current.scrollIntoView({
         behavior: "smooth",
-        block: "start", // You can adjust this based on your requirements
+        block: "start",
       });
     }
   }
@@ -27,20 +27,15 @@ const HomePage = () => {
   }, []);
   return (
     <>
-      <section className="px-4 md:px-16 sm:pt-[4rem] pb-48 relative bg-gradient-to-b from-purple-700 to-purple-400">
+      <section className="px-4 md:px-16 sm:pt-[4rem] pb-48 relative bg-gradient-to-b from-purple-700 to-purple-400 min-h-[70dvh]">
+        <div className="shape-bottom" />
         <div
-          style={{
-            position: "absolute",
-            bottom: "-5rem",
-            height: "30rem",
-            left: "-5px",
-            right: "-5px",
-            backgroundImage: `url('bottomshape01.png')`,
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "bottom",
-            backgroundSize: "cover",
-            zIndex: 1,
-          }}
+          className="header-bg bottom-[-4rem] sm:bottom-[-1rem] lg:bottom-[-2rem]
+          right-[-7.5rem] sm:right-[-2.5rem] md:right-[-5rem] xl:right-10
+          h-[30rem] w-[30rem]
+          md:h-[40rem] md:w-[40rem]
+          lg:h-[50rem] lg:w-[50rem]
+          absolute bg-contain bg-no-repeat"
         />
         <div className="max-w-screen-2xl mx-auto flex relative">
           <div className="flex gap-2 text-white md:flex-col absolute md:bottom-0 bottom-[-4rem] md:top-0 md:right-0 z-50">
@@ -50,24 +45,24 @@ const HomePage = () => {
               </a>
             ))}
           </div>
-          <div className="md:basis-1/4">
+          <div className="md:basis-2/4">
             <div className="text-white relative w-fit z-50">
               <h4 className="text-3xl sm:text-4xl md:text-6xl">Hej!</h4>
               <h6 className="text-lg sm:text-xl md:text-3xl">
                 Jag är Sveriges första bygginspiratör,
               </h6>
-              <h1 className="tracking-tighter text-5xl sm:text-6xl md:text-8xl lg:text-9xl uppercase md:ml-[-.5rem] leading-none whitespace-pre-line">
+              <h1 className="tracking-tighter text-5xl sm:text-6xl md:text-7xl lg:text-8xl uppercase md:ml-[-.5rem] leading-none whitespace-pre-line">
                 Sandra{"\n"}Moboraki
               </h1>
             </div>
             <div className="hidden md:block md:mt-4 relative z-50">
-              <h6 className="text-md md:text-2xl text-white leading-snug whitespace-pre-line w-full sm:w-3/6 md:w-full ">
+              <h6 className="text-md md:text-2xl text-white leading-snug whitespace-pre-line w-full sm:w-3/6 md:w-full">
                 Möt Byggsandra - Sveriges första bygginspiratör som driver jämställdhet och
                 nyskapande inom branschen via konsulttjänster och inspirerande föreläsningar.{"\n"}
                 Välkommen till en värld av innovativ bygginspiration.
               </h6>
             </div>
-            <div className="lg:text-right mt-4 md:mt-8 relative z-50">
+            <div className="mt-4 md:mt-8 relative z-50">
               <button
                 type="button"
                 onClick={() => scrollToNextSection(servicesRef)}
@@ -78,7 +73,7 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-        <img
+        {/* <img
           className="
           w-[30rem]
           md:w-[40rem]
@@ -93,7 +88,7 @@ const HomePage = () => {
           "
           src="byggsandra.png"
           alt="Bonnie Avatar"
-        ></img>
+        ></img> */}
         <div
           onClick={() => scrollToNextSection(aboutRef)}
           className={`hidden lg:flex absolute ease-in-out bottom-3 z-50 left-0 right-0 justify-center transition-opacity duration-1000 ${

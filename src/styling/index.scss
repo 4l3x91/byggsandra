@@ -100,3 +100,21 @@ body {
   transform: scale(1.01);
   cursor: grabbing;
 }
+.header-bg {
+  background-image: url(byggsandra02.png);
+  background-position-x: right;
+  background-position-y: bottom;
+}
+
+.shape-bottom {
+  bottom: -5rem;
+  left: -5px;
+  right: -5px;
+  height: 30rem;
+  background-image: url('bottomshape01.png');
+  z-index: 1;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+}
