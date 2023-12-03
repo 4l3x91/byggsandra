@@ -6,7 +6,7 @@ const Contact = () => {
   return (
     <section
       className={`
-    px-4 py-16 z-10 relative bg-gradient-to-b duration-500 transition-all animate-background from-white via-white to-stone-200
+    px-4 py-16 z-10 relative bg-white
     `}
     >
       <div className="bg-shape" />
@@ -28,13 +28,21 @@ const Contact = () => {
                     {item.title}
                   </h6>
                   <div className="space-y-4">
-                    {item.contacts.map((link, index) => (
-                      <div key={index} className="flex gap-2 items-center">
-                        <link.icon size={24} />
-                        <p className="text-lg md:text-xl border-b-2 border-black">
-                          {link.description}
+                    {item.contacts.map((contact, index) => (
+                      <a
+                        key={index}
+                        href={`${
+                          contact.type === "tel"
+                            ? `tel:${contact.link}`
+                            : `mailto:${contact.link}?subject=${contact.subject}`
+                        }`}
+                        className="flex gap-2 items-center group hover:text-violet-600 transition-all duration-200 w-fit cursor-pointer"
+                      >
+                        <contact.icon size={24} />
+                        <p className="text-lg md:text-xl border-b-2 border-black group-hover:border-violet-600 transition-all duration-200">
+                          {contact.description}
                         </p>
-                      </div>
+                      </a>
                     ))}
                   </div>
                 </div>
@@ -45,7 +53,7 @@ const Contact = () => {
         </div>
         <div className="flex items-center gap-4 mt-12 lg:mt-24 justify-center lg:justify-normal">
           {socials.map((link, index) => (
-            <a key={index} href={link.path} target="_blank" className="hover:text-fuchsia-800">
+            <a key={index} href={link.path} target="_blank" className="hover:text-violet-600">
               {<link.icon size={48} />}
             </a>
           ))}

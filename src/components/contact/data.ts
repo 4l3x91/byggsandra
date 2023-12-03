@@ -10,6 +10,8 @@ interface ContactPartial {
   icon: React.ElementType;
   description: string;
   link: string;
+  type: "tel" | "mail";
+  subject?: string;
 }
 export const data: Contact[] = [
   {
@@ -18,12 +20,15 @@ export const data: Contact[] = [
       {
         icon: FaPhoneAlt,
         description: "Ring mig",
-        link: "",
+        link: "+46702122045",
+        type: "tel",
       },
       {
         icon: TbMail,
         description: "Skicka mail",
-        link: "",
+        link: "sandra@byggsandra.se",
+        type: "mail",
+        subject: "Allmän fråga",
       },
     ],
   },
@@ -33,17 +38,23 @@ export const data: Contact[] = [
       {
         icon: TbMail,
         description: "Joint Ventures",
-        link: "",
+        link: "sandra@byggsandra.se",
+        type: "mail",
+        subject: "Samarbeten | Joint Ventures",
       },
       {
         icon: TbMail,
         description: "Produktsamarbete",
-        link: "",
+        link: "sandra@byggsandra.se",
+        type: "mail",
+        subject: "Samarbeten | Produktsamarbete",
       },
       {
         icon: TbMail,
         description: "Workshop & utbildning",
-        link: "",
+        link: "sandra@byggsandra.se",
+        type: "mail",
+        subject: "Samarbeten | Workshop & utbildning",
       },
     ],
   },

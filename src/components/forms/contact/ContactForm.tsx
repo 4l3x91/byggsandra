@@ -6,7 +6,7 @@ const ContactForm = () => {
           <input
             type="text"
             id="name"
-            className="bg-black text-white placeholder-gray-300 text-sm rounded-lg block w-full p-4 shadow-lg"
+            className="bg-black text-white placeholder-gray-300 text-sm rounded-lg block w-full p-4 shadow-lg outline-2 outline focus:outline-violet-600"
             placeholder="För- och efternamn *"
             required
           />
@@ -14,27 +14,27 @@ const ContactForm = () => {
             <input
               type="email"
               id="email"
-              className="bg-black text-white placeholder-gray-300 text-sm rounded-lg block w-full p-4 outline-2 outline focus:outline-fuchsia-600"
+              className="bg-black text-white placeholder-gray-300 text-sm rounded-lg block w-full p-4 shadow-lg outline-2 outline focus:outline-violet-600"
               placeholder="Email *"
               required
             />
             <input
               type="tel"
               id="tel"
-              className="bg-black text-white placeholder-gray-300 text-sm rounded-lg block w-full p-4 shadow-lg"
+              className="bg-black text-white placeholder-gray-300 text-sm rounded-lg block w-full p-4 shadow-lg outline-2 outline focus:outline-violet-600"
               placeholder="Telefonnummer"
             />
           </div>
           <textarea
             id="message"
-            className="bg-black text-white placeholder-gray-300 text-sm rounded-lg block w-full p-4 shadow-lg min-h-[150px] resize-none"
+            className="bg-black text-white placeholder-gray-300 text-sm rounded-lg block w-full p-4 shadow-lg min-h-[150px] resize-none outline-2 outline focus:outline-violet-600"
             placeholder="Meddelande *"
           />
           <button
             type="submit"
             className="bg-transparent w-full relative inline-flex items-center justify-center
             overflow-hidden text-sm text-white rounded-lg group bg-gradient-to-br
-            from-purple-400 to-fuchsia-800 outline-0 shadow-lg"
+            from-purple-400 to-violet-800 outline-0 shadow-lg"
           >
             <span className="w-full relative p-4 transition-all ease-in duration-200 bg-black rounded-md group-hover:bg-opacity-0">
               Skicka
