@@ -41,7 +41,7 @@ const Services = ({ serviceRef }: Props) => {
       ${currentService.name === services[0].name && "from-purple-600 via-purple-900 to-purple-950"}
       ${
         currentService.name === services[1].name &&
-        "from-fuchsia-700 via-fuchsia-800 to-fuchsia-950"
+        "from-fuchsia-800 via-fuchsia-900 to-fuchsia-950"
       }
       ${currentService.name === services[2].name && "from-violet-700 via-violet-800 to-violet-950"}
       `}
