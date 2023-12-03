@@ -1,4 +1,4 @@
-import { Service } from "../../shared/services";
+import { Service } from "./data";
 
 interface Props {
   services: Service[];
