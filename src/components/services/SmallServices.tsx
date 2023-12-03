@@ -144,7 +144,6 @@ const SmallServices = ({ services }: Props) => {
           />
         ))}
       </div>
-      Active service: {activeService}
     </>
   );
 };
