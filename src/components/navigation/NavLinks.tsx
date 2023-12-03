@@ -1,15 +1,10 @@
 import { NavLink } from "react-router-dom";
+import { data as navLinks } from "./data";
 
 const NavLinks = () => {
-  const NavLinks = [
-    { title: "Home", path: "/" },
-    { title: "Kontakt", path: "/kontakt" },
-    { title: "Om mig", path: "/om-mig" },
-  ];
-
   return (
     <div className="hidden md:flex md:gap-8">
-      {NavLinks.map((link, index) => (
+      {navLinks.map((link, index) => (
         <NavLink
           key={index}
           to={link.path}

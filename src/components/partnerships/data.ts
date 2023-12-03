@@ -4,7 +4,7 @@ interface Partner {
   shouldBeInverted: boolean;
 }
 
-export const partners: Partner[] = [
+export const data: Partner[] = [
   {
     name: "Åkesundsvägen",
     image: "https://byggsandra.se/wp-content/uploads/2020/10/akesundsvll2.png",

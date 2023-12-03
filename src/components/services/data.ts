@@ -10,7 +10,7 @@ export interface Service {
   image: string;
 }
 
-export const services: Service[] = [
+export const data: Service[] = [
   {
     icon: DiCodepen,
     name: "Projektledare",

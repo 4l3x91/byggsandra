@@ -116,3 +116,35 @@ body {
   background-size: cover;
   background-position: bottom;
 }
+.animate-background {
+  background-size: 300%;
+
+  -webkit-animation: backgroundMoveAnimation 10s ease-in-out infinite;
+  -moz-animation: backgroundMoveAnimation 10s ease-in-out infinite;
+  animation: backgroundMoveAnimation 10s ease-in-out infinite;
+}
+
+@keyframes backgroundMoveAnimation {
+
+  0%,
+  100% {
+    background-position: 0% 0%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.bg-shape:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 200px;
+  background-color: white;
+  border-radius: 50%;
+  top: -100px;
+  right: 0;
+  left: 0;
+  z-index: -1;
+}

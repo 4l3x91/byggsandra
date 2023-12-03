@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { Service, services } from "../data/services";
-import BigServices from "./services/BigServices";
-import SmallServices from "./services/SmallServices";
+import BigServices from "./BigServices";
+import SmallServices from "./SmallServices";
+import { Service, data as services } from "./data";
 
 interface Props {
   serviceRef: React.RefObject<HTMLDivElement>;
@@ -36,25 +36,17 @@ const Services = ({ serviceRef }: Props) => {
 
   return (
     <section
-      className="px-4 py-36 z-10 relative bg-gradient-to-b from-purple-400 to-purple-700 text-white"
+      className={`
+      px-4 pt-36 pb-56 z-10 relative bg-gradient-to-br text-white duration-500 transition-all animate-background
+      ${currentService.name === services[0].name && "from-purple-600 via-purple-900 to-purple-950"}
+      ${
+        currentService.name === services[1].name &&
+        "from-fuchsia-700 via-fuchsia-800 to-fuchsia-950"
+      }
+      ${currentService.name === services[2].name && "from-violet-700 via-violet-800 to-violet-950"}
+      `}
       ref={serviceRef}
     >
-      {screenWidth > smScreen ? (
-        <div
-          className="absolute top-0 bottom-0 bg-no-repeat bg-cover bg-center-top"
-          style={{
-            inset: 0,
-            backgroundImage: `linear-gradient(
-            to bottom,
-            rgba(0, 0, 0, 0.45),
-            rgba(0, 0, 0, 0.55)
-          ),url('${currentService.image}')`,
-            filter: "opacity(.8)",
-          }}
-        />
-      ) : (
-        <></>
-      )}
       <div
         style={{
           position: "absolute",

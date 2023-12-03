@@ -1,4 +1,4 @@
-import { Service } from "../../data/services";
+import { Service } from "../../shared/services";
 
 interface Props {
   services: Service[];
@@ -8,7 +8,7 @@ interface Props {
 const BigServices = ({ services, currentService, setCurrentService }: Props) => {
   return (
     <div className="grid grid-cols-12 gap-8 xl:gap-24 border-t pt-8">
-      <div className="flex flex-col col-span-7 border-r pr-4">
+      <div className="flex flex-col col-span-7 pr-4">
         <h5 className="text-4xl tracking-tight font-bold">{currentService.name}</h5>
         <h6 className="my-auto text-2xl whitespace-pre-line">{currentService.description}</h6>
         <a
@@ -19,34 +19,19 @@ const BigServices = ({ services, currentService, setCurrentService }: Props) => 
         </a>
       </div>
       <div className="col-span-5 transition-all duration-500">
-        <div className="p-4 divide-y">
+        <div className="space-y-4">
           {services.map((service, index) => (
             <div
-              className={`${currentService === service ? "active-service" : ""}`}
+              className={`cursor-pointer grid grid-cols-12 items-center bg-white text-black overflow-hidden rounded-2xl transition-all duration-500 ${
+                currentService === service ? "opacity-100" : "opacity-50 hover:opacity-100"
+              }`}
+              onClick={() => setCurrentService(services[index])}
               key={service.name}
             >
-              <div
-                key={service.name}
-                className={`${
-                  service === currentService ? "opacity-100" : "opacity-50"
-                } mb-2 mt-auto cursor-pointer
-        ${index !== 0 && index !== services.length - 1 ? "py-4" : ""}
-        ${index === 0 ? "pb-4" : ""}
-        ${index === services.length - 1 ? "pt-4" : ""}
-        `}
-                onClick={() => setCurrentService(services[index])}
-              >
-                <div className="flex items-center lg:items-top">
-                  <div className="mr-4">
-                    <service.icon size={48} />
-                  </div>
-                  <div>
-                    <div className="text-lg lg:text-xl tracking-tight font-bold">
-                      {service.name}
-                    </div>
-                    <p>{service.shortDescription}</p>
-                  </div>
-                </div>
+              <img src={service.image} height={"100%"} className="col-span-4 overflow-hidden" />
+              <div className="col-span-8 px-4 ">
+                <div className="text-lg lg:text-xl tracking-tight font-bold">{service.name}</div>
+                <p>{service.shortDescription}</p>
               </div>
             </div>
           ))}

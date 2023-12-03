@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Service } from "../../data/services";
+import { Service } from "../../shared/services";
 
 interface Props {
   services: Service[];

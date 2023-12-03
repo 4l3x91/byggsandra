@@ -1,4 +1,4 @@
-import { partners } from "../data/partners";
+import { data as partners } from "./data";
 
 const Partnerships = () => {
   const duplicatedPartners = [...partners, ...partners];

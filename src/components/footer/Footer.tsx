@@ -1,8 +1,8 @@
 import { CgExternal } from "react-icons/cg";
 import { FaHeart } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { footerLinks } from "../data/footerLinks";
-import socials from "../data/socials";
+import socials from "../../shared/data/socials";
+import { data as footerLinks } from "./data";
 
 const Footer = () => {
   return (
@@ -14,7 +14,7 @@ const Footer = () => {
               ByggSandra
             </a>
           </div>
-          <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+          <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-1">
             {footerLinks.map((link, index) => (
               <div key={index}>
                 <h2 className="mb-6 text-sm font-semibold uppercase">{link.title}</h2>
