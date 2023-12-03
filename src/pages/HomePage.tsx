@@ -47,7 +47,7 @@ const HomePage = () => {
                 key={index}
                 href={link.path}
                 target="_blank"
-                className="hover:text-purple-200 relative group"
+                className="opacity:100 lg:opacity-75 hover:lg:opacity-100 relative group"
               >
                 <div className="absolute z-10 hidden group-hover:flex items-center bg-stone-800 p-2 text-xs left-10 md:left-auto md:right-10 xl:left-10 xl:right-auto rounded-lg gap-1">
                   {link.title} <CgExternal size={16} />

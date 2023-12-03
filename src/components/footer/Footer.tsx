@@ -49,7 +49,7 @@ const Footer = () => {
           </a>
           <div className="flex mt-4 gap-2 sm:justify-center sm:mt-0">
             {socials.map((link, index) => (
-              <a key={index} href={link.path} target="_blank" className="hover:text-purple-200">
+              <a key={index} href={link.path} target="_blank" className="hover:text-fuchsia-700">
                 <link.icon size={32} />
               </a>
             ))}
