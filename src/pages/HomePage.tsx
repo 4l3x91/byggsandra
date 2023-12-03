@@ -63,7 +63,7 @@ const HomePage = () => {
                 Jag är Sveriges första bygginspiratör,
               </h6>
               <h1 className="tracking-tighter text-5xl sm:text-6xl md:text-7xl lg:text-8xl uppercase md:ml-[-.5rem] leading-none whitespace-pre-line">
-                Sandra{"\n"}Moboraki
+                Sandra{"\n"}Mobaraki
               </h1>
             </div>
             <div className="hidden md:block md:mt-4 relative z-50">
