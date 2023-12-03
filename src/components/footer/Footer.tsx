@@ -6,7 +6,7 @@ import { data as footerLinks } from "./data";
 
 const Footer = () => {
   return (
-    <footer className="w-full lg:w-auto bg-black justify-center px-4 text-white">
+    <footer className="w-full lg:w-auto bg-black justify-center px-4 text-white safe-bottom">
       <div className="max-w-screen-2xl mx-auto flex flex-col py-4 md:pb-6 md:pt-24">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
